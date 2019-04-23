@@ -9,7 +9,7 @@ import java.io.*;
 
 public class Gui extends JFrame  {
 
-    private static final String ABOUT = "about.txt";
+    private static final String ABOUT = "src/Files/about.txt";
 
     public Gui() {
         setTitle("Лабораторные задачи");
@@ -20,7 +20,7 @@ public class Gui extends JFrame  {
 
         BufferedImage image = null;
         try {
-            image = ImageIO.read(new File("politeh.png"));
+            image = ImageIO.read(new File("src/Files/politeh.png"));
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Not found background picture",
                     "MESSAGE", JOptionPane.INFORMATION_MESSAGE);
