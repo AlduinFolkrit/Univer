@@ -36,11 +36,7 @@ public class Gui extends JFrame  {
         JMenuItem exit = new JMenuItem("Exit");
         file.add(exit);
         menuBar.add(file);
-        exit.addActionListener(a -> {
-            Runtime runtime = Runtime.getRuntime();
-            runtime.exit(0);
-//                    System.exit(1);
-        });
+        exit.addActionListener(a -> Runtime.getRuntime().exit(0));
 
         JMenu laboratories = new JMenu("Laboratories");
         JMenu laba1 = new JMenu("Laboratory 1");
