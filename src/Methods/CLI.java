@@ -1,8 +1,15 @@
-import GUI.Gui;
-import Methods.Input;
+package Methods;
 
-public class Start {
-    public static void main(String[] args) {
+import GUI.Gui;
+
+public class CLI implements Runnable {
+
+    public CLI() {
+        new Thread(this, "Command Line Interface").start();
+    }
+
+    @Override
+    public void run() {
         Input in = new Input();
         Laboratory laboratory = new Laboratory();
         int mode;
@@ -10,14 +17,13 @@ public class Start {
         exit:
         for (; ; ) {
             do {
-                System.out.println("\nВЫБЕРИТЕ ЛАБОРАТОРУЮ РАБОТУ ОТ 1-7:\n");
+                System.out.println("\nВЫБЕРИТЕ ЛАБОРАТОРУЮ РАБОТУ ОТ 1-6:\n");
                 System.out.println("1. ЛАБОРАТОРНАЯ РАБОТА № 1 А");
                 System.out.println("2. ЛАБОРАТОРНАЯ РАБОТА № 1 Б");
                 System.out.println("3. ЛАБОРАТОРНАЯ РАБОТА № 2 А");
                 System.out.println("4. ЛАБОРАТОРНАЯ РАБОТА № 2 Б");
                 System.out.println("5. ЛАБОРАТОРНАЯ РАБОТА № 3 А");
                 System.out.println("6. ЛАБОРАТОРНАЯ РАБОТА № 3 Б");
-                System.out.println("7. ПРОГРАММЫ В ГРАФИЧЕСКОМ РЕЖИМЕ");
                 System.out.println("0. ВЫХОДА");
 
                 mode = in.input("\nВЫБЕРИТЕ: > ");

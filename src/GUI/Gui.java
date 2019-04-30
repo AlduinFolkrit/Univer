@@ -1,9 +1,9 @@
 package GUI;
 
-import javax.imageio.ImageIO;
+import Methods.CLI;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.*;
 
 
@@ -18,26 +18,36 @@ public class Gui extends JFrame  {
         setResizable(false);
         setLayout(new FlowLayout());
 
-        BufferedImage image = null;
-        try {
-            image = ImageIO.read(new File("src/Files/politeh.png"));
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Not found background picture",
-                    "MESSAGE", JOptionPane.INFORMATION_MESSAGE);
-        }
-        if (image != null) {
-            JLabel label = new JLabel(new ImageIcon(image));
+//BufferedImage image=null;
+//        try {
+        JLabel label = new JLabel(new ImageIcon(Gui.class.getResource("/Files/politeh.png")));
+//        image = ImageIO.read(Gui.class.getResource("/Files/politeh.png"));
+//        } catch (IOException e) {
+//            JOptionPane.showMessageDialog(null, "Not found background picture",
+//                    "MESSAGE", JOptionPane.INFORMATION_MESSAGE);
+//        }
+//        if (image != null) {
+//            JLabel label = new JLabel(new ImageIcon(image));
             add(label);
-        }
+//        }
 
         JMenuBar menuBar = new JMenuBar();
 
         JMenu file = new JMenu("File");
         JMenuItem exit = new JMenuItem("Exit");
+        JMenuItem cli = new JMenuItem("CLI");
+        file.add(cli);
         file.add(exit);
         menuBar.add(file);
-        exit.addActionListener(a -> Runtime.getRuntime().exit(0));
 
+        exit.addActionListener(a -> Runtime.getRuntime().exit(0));
+        cli.addActionListener(a-> new CLI());
+//            try {
+//               Process exec = Runtime.getRuntime().exec("xed");
+//            } catch (IOException e) {
+//                System.out.println("not found command");
+//            }
+//        }
         JMenu laboratories = new JMenu("Laboratories");
         JMenu laba1 = new JMenu("Laboratory 1");
         JMenuItem laba1A = new JMenuItem("A");
@@ -93,7 +103,8 @@ public class Gui extends JFrame  {
     private StringBuilder printAbout(){
         String s;
         StringBuilder x = new StringBuilder();
-        try(BufferedReader reader = new BufferedReader(new FileReader(ABOUT))) {
+        try(BufferedReader reader = new BufferedReader(new InputStreamReader(Gui.class.getResourceAsStream("/Files/about.txt")))) {
+//        try(BufferedReader reader = new BufferedReader(new FileReader(ABOUT))) {
             while ((s = reader.readLine()) != null) {
                 x.append(s).append("\n");
 //                x += s + "\n";

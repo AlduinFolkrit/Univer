@@ -1,4 +1,4 @@
-import Methods.*;
+package Methods;
 
 import java.util.Arrays;
 
@@ -33,11 +33,11 @@ class Laboratory {
         System.out.printf("%nНаибольшая дробь %,.2f %n",Fraction.max(f1.fractionToDecimal(),f2.fractionToDecimal(),f3.fractionToDecimal()));
     }
 
-    public void solveLaboratory2A() {
+    void solveLaboratory2A() {
         System.out.println("TEMPORARILY NOT WORKING");
     }
 
-    public void solveLaboratory2B() {
+    void solveLaboratory2B() {
 
         MyRandom rdm = new MyRandom(500, 0);
         CompositeNumbers composite = new CompositeNumbers();
@@ -60,7 +60,7 @@ class Laboratory {
         System.out.print(perfect);
     }
 
-    public void solveLaboratory3A() {
+    void solveLaboratory3A() {
 
         MaxEvenNumberMinOddNumber maxMin = new MaxEvenNumberMinOddNumber();
         MyRandom rdm = new MyRandom(500, 10);
@@ -75,7 +75,7 @@ class Laboratory {
         System.out.println(maxMin);
     }
 
-    public void solveLaboratory3B() {
+    void solveLaboratory3B() {
 
         NegativeNumber negative = new NegativeNumber();
         SaddlePoint saddle = new SaddlePoint();
