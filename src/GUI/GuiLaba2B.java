@@ -73,7 +73,7 @@ public class GuiLaba2B extends JFrame implements Action{
         setVisible(true);
     }
 
-    void calculate() {
+   private void calculate() {
 
         MyRandom rdm = new MyRandom(maxBoundary, minBoundary);
         int[] array = new int[x];

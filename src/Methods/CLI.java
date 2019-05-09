@@ -1,6 +1,5 @@
 package Methods;
 
-import GUI.Gui;
 
 public class CLI implements Runnable {
 
@@ -14,7 +13,6 @@ public class CLI implements Runnable {
         Laboratory laboratory = new Laboratory();
         int mode;
 
-        exit:
         for (; ; ) {
             do {
                 System.out.println("\nВЫБЕРИТЕ ЛАБОРАТОРУЮ РАБОТУ ОТ 1-6:\n");
@@ -28,9 +26,10 @@ public class CLI implements Runnable {
 
                 mode = in.input("\nВЫБЕРИТЕ: > ");
             } while (mode > 7 || mode < 0);
-            if (mode == 0)
+            if (mode == 0) {
+                System.out.println("\n"+Thread.currentThread().getName() + " has been completed !!!");
                 break;
-
+            }
             switch (mode) {
                 case 1:
                     laboratory.solveLaboratory1A();
@@ -51,9 +50,6 @@ public class CLI implements Runnable {
                 case 6:
                     laboratory.solveLaboratory3B();
                     break;
-                case 7:
-                    new Gui();
-                    break exit;
 
             }
         }

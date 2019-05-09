@@ -6,7 +6,7 @@ import java.util.List;
 public class CompositeNumbers {
 
     private int compositeNumber;
-    List<Integer> list = new ArrayList<>();
+   private List<Integer> list = new ArrayList<>();
 
     public void CompositeNumbersCalculate(int[] mass) {
 

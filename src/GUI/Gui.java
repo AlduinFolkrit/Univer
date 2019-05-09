@@ -42,12 +42,6 @@ public class Gui extends JFrame  {
 
         exit.addActionListener(a -> Runtime.getRuntime().exit(0));
         cli.addActionListener(a-> new CLI());
-//            try {
-//               Process exec = Runtime.getRuntime().exec("xed");
-//            } catch (IOException e) {
-//                System.out.println("not found command");
-//            }
-//        }
         JMenu laboratories = new JMenu("Laboratories");
         JMenu laba1 = new JMenu("Laboratory 1");
         JMenuItem laba1A = new JMenuItem("A");
@@ -67,7 +61,7 @@ public class Gui extends JFrame  {
 
         laba2.add(laba2A);
         laba2A.addActionListener(a -> JOptionPane.showMessageDialog(null, "Runtime error!",
-                "", JOptionPane.ERROR_MESSAGE));
+                "Лабораторная 2А", JOptionPane.ERROR_MESSAGE));
 
         laba2.add(laba2B);
         laba2B.addActionListener(a -> new GuiLaba2B());

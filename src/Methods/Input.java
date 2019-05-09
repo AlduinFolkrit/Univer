@@ -3,9 +3,9 @@ package Methods;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Input {
+class Input {
 
-    public int input(String s) {
+    int input(String s) {
 
         boolean loop = true;
         int i = 0;
